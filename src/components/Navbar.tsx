@@ -47,7 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenChat }) => {
           >
             <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-500/40 group-hover:border-blue-600 transition-colors shadow-sm shadow-blue-500/20">
               <Image
-                src="/chetan_avatar.jpg"
+                src={getAssetPath("/chetan_avatar.jpg")}
                 alt="Chetan Singh Avatar"
                 fill
                 sizes="40px"

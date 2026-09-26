@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { ArrowUp, MapPin } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
+import { getAssetPath } from "@/utils/basePath";
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -19,7 +20,7 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-3">
             <div className="relative w-9 h-9 rounded-full overflow-hidden border border-blue-400 shadow-2xs">
               <Image
-                src="/chetan_avatar.jpg"
+                src={getAssetPath("/chetan_avatar.jpg")}
                 alt="Chetan Singh"
                 fill
                 sizes="36px"

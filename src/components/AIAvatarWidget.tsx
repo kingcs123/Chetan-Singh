@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
 import { generatePersonaResponse } from "@/utils/aiPersona";
+import { getAssetPath } from "@/utils/basePath";
 
 interface Message {
   role: "assistant" | "user";
@@ -186,7 +187,7 @@ export const AIAvatarWidget: React.FC<AIAvatarWidgetProps> = ({
           {/* Floating Avatar Sphere with Idle Bobbing */}
           <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-white shadow-xl bg-white flex items-center justify-center animate-idle-float">
             <Image
-              src="/chetan_avatar.jpg"
+              src={getAssetPath("/chetan_avatar.jpg")}
               alt="Chetan - AI Persona"
               fill
               sizes="(max-width: 640px) 56px, 64px"
@@ -223,7 +224,7 @@ export const AIAvatarWidget: React.FC<AIAvatarWidgetProps> = ({
               <div className="flex items-center gap-3">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden border border-blue-400 shadow-sm">
                   <Image
-                    src="/chetan_avatar.jpg"
+                    src={getAssetPath("/chetan_avatar.jpg")}
                     alt="Chetan AI"
                     fill
                     sizes="40px"
@@ -282,7 +283,7 @@ export const AIAvatarWidget: React.FC<AIAvatarWidgetProps> = ({
                   {msg.role === "assistant" && (
                     <div className="w-6 h-6 rounded-full overflow-hidden flex-shrink-0 relative border border-blue-300 mt-1 shadow-2xs">
                       <Image
-                        src="/chetan_avatar.jpg"
+                        src={getAssetPath("/chetan_avatar.jpg")}
                         alt="Chetan"
                         fill
                         sizes="24px"
@@ -307,7 +308,7 @@ export const AIAvatarWidget: React.FC<AIAvatarWidgetProps> = ({
                 <div className="flex gap-2.5 items-center">
                   <div className="w-6 h-6 rounded-full overflow-hidden flex-shrink-0 relative border border-blue-300">
                     <Image
-                      src="/chetan_avatar.jpg"
+                      src={getAssetPath("/chetan_avatar.jpg")}
                       alt="Chetan"
                       fill
                       sizes="24px"

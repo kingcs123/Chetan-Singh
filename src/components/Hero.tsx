@@ -204,7 +204,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChat }) => {
                 <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 opacity-30 blur-md animate-pulse-ring" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-3 border-white shadow-2xl shadow-blue-500/20">
                   <Image
-                    src="/chetan_avatar.jpg"
+                    src={getAssetPath("/chetan_avatar.jpg")}
                     alt="Chetan Singh AI Persona"
                     fill
                     sizes="(max-width: 640px) 224px, 256px"

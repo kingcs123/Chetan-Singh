@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import confetti from "canvas-confetti";
 import { portfolioData } from "@/data/portfolioData";
+import { getAssetPath } from "@/utils/basePath";
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -239,7 +240,7 @@ export const Contact: React.FC = () => {
                 Download my complete professional CV covering 5+ years in MIS Operations, technical stack, organizational milestones, and quantified business impacts.
               </p>
               <a
-                href="/Chetan_Singh_CV.pdf"
+                href={getAssetPath("/Chetan_Singh_CV.pdf")}
                 download="Chetan_Singh_CV.pdf"
                 className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs sm:text-sm transition-all shadow-md shadow-blue-500/20 group"
               >

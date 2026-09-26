@@ -17,6 +17,7 @@ import {
   Download,
 } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
+import { getAssetPath } from "@/utils/basePath";
 
 interface HeroProps {
   onOpenChat: (initialQuery?: string) => void;
@@ -106,7 +107,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChat }) => {
             {/* Quick Action Buttons */}
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
               <a
-                href="/Chetan_Singh_CV.pdf"
+                href={getAssetPath("/Chetan_Singh_CV.pdf")}
                 download="Chetan_Singh_CV.pdf"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-md shadow-blue-500/25 hover:shadow-blue-500/40 transition-all group"
               >

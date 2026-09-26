@@ -18,6 +18,7 @@ import {
   Zap,
 } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
+import { generatePersonaResponse } from "@/utils/aiPersona";
 
 interface Message {
   role: "assistant" | "user";
@@ -81,38 +82,29 @@ export const AIAvatarWidget: React.FC<AIAvatarWidgetProps> = ({
     setIsLoading(true);
     setShowMiniNotification(false);
 
-    try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: newMessages }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Chat request failed");
-      }
-
-      const data = await response.json();
-      const botReply: Message = {
-        role: "assistant",
-        content:
-          data.reply ||
-          "I'm here to answer any questions about my CV, skills, and experience!",
-      };
-      setMessages((prev) => [...prev, botReply]);
-    } catch (err) {
-      console.error(err);
-      setMessages((prev) => [
-        ...prev,
-        {
+    // Simulate brief human-like typing delay (400ms)
+    setTimeout(() => {
+      try {
+        const replyText = generatePersonaResponse(query.trim());
+        const botReply: Message = {
           role: "assistant",
-          content:
-            "I'm having a brief connection hitch, but I'm grounded in my verified CV! Feel free to ask about my work at Quess Corp, my AppSheet automation, or my contact information (+91 9079265198).",
-        },
-      ]);
-    } finally {
-      setIsLoading(false);
-    }
+          content: replyText,
+        };
+        setMessages((prev) => [...prev, botReply]);
+      } catch (err) {
+        console.error(err);
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content:
+              "I'm grounded in my verified CV! Feel free to ask about my work at Quess Corp, my AppSheet apps, or my direct contact (+91 9079265198).",
+          },
+        ]);
+      } finally {
+        setIsLoading(false);
+      }
+    }, 450);
   };
 
   const samplePrompts = [

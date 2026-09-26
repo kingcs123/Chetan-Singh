@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X, Sparkles, MessageSquareCode, Download } from "lucide-react";
+import { getAssetPath } from "@/utils/basePath";
 
 interface NavbarProps {
   onOpenChat: () => void;
@@ -94,7 +95,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenChat }) => {
             </a>
 
             <a
-              href="/Chetan_Singh_CV.pdf"
+              href={getAssetPath("/Chetan_Singh_CV.pdf")}
               download="Chetan_Singh_CV.pdf"
               className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 hover:border-blue-400 transition-all shadow-sm group"
             >
@@ -132,7 +133,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenChat }) => {
               </svg>
             </a>
             <a
-              href="/Chetan_Singh_CV.pdf"
+              href={getAssetPath("/Chetan_Singh_CV.pdf")}
               download="Chetan_Singh_CV.pdf"
               aria-label="Download CV"
               className="p-2 rounded-lg bg-white text-blue-600 border border-slate-200 shadow-sm"
@@ -186,7 +187,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenChat }) => {
               <span>Connect on LinkedIn</span>
             </a>
             <a
-              href="/Chetan_Singh_CV.pdf"
+              href={getAssetPath("/Chetan_Singh_CV.pdf")}
               download="Chetan_Singh_CV.pdf"
               className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200"
             >
